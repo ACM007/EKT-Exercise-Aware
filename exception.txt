@@ -1,0 +1,22 @@
+in user code:
+
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\training.py:853 train_function  *
+        return step_function(self, iterator)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\training.py:842 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1286 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2849 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3632 _call_for_each_replica
+        return fn(*args, **kwargs)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\training.py:835 run_step  **
+        outputs = model.train_step(data)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\training.py:787 train_step
+        y_pred = self(x, training=True)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\base_layer.py:1020 __call__
+        input_spec.assert_input_compatibility(self.input_spec, inputs, self.name)
+    G:\导师\智慧教育\自然语言处理\代码\lib\site-packages\keras\engine\input_spec.py:218 assert_input_compatibility
+        str(tuple(shape)))
+
+    ValueError: Input 0 of layer sequential is incompatible with the layer: expected ndim=3, found ndim=2. Full shape received: (None, 160)
